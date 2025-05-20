@@ -15,7 +15,7 @@ main{
     flex-direction: row;
     align-items: center;
     height: 100vh;
-    padding: 0 300px 0 300px;
+    padding: 0 200px 0 200px;
 }
 
 #input-text-container{
