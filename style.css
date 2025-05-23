@@ -5,8 +5,8 @@
 }
 
 body{
-    background-color: #151515;
-    color: #FFF;
+    background-color: #FFF;
+    color: #000;
 }
 
 main{
@@ -32,11 +32,14 @@ textarea{
     width: 500px;
     height: auto;
     min-height: 500px;
-    border: none;
-    border-radius: 5px;
+    border: 1px solid #000;
+    border-radius: 20px;
     font-size: 25px;
-    text-align: center;
+    text-align: start;
+    padding-left: 20px;
+    padding-top: 20px;
     resize: none;
+    box-shadow: 3px 3px 5px #AAA;
 }
 
 #output-text-container{
@@ -47,6 +50,11 @@ textarea{
     text-align: center;
     margin-bottom: 20px;
     font-size: 35px;
+}
+
+#output-text-container textarea{
+    color: #303030;
+    background-color: rgba(255, 119, 226, 0.2);
 }
 
 footer{
