@@ -3,7 +3,10 @@ let alphabet = [
     'n','o','p','q','r','s','t','u','v','w','x','y','z'
 ];
 
-let alphabetUp = alphabet.map(c => c.toUpperCase());
+let alphabetUp = [
+    'A','B','C','D','E','F','G','H','I','J','K','L','M',
+    'N','O','P','Q','R','S','T','U','V','W','X','Y','Z'
+]
 
 let alphabetContainer = document.getElementById('alphabet');
 let alphabetStr = '<h2>Строчный алфавит</h2><br><p>';
@@ -17,6 +20,13 @@ for (let i = 0; i < alphabetUp.length; i++) {
 alphabetStr += '</p>'
 alphabetContainer.innerHTML = alphabetStr;
 
+function findIndex(arr, char) {
+    for (let i = 0; i < arr.length; i++) {
+        if (arr[i] === char) return i;
+    }
+    return -1;
+}
+
 function rot13(text) {
     let result = '';
     let operationCh = [];
@@ -26,13 +36,13 @@ function rot13(text) {
         let ch = text[i];
         operationCh.push(ch);
 
-        let chL = alphabet.indexOf(ch);
+        let chL = findIndex(alphabet, ch);
         if (chL !== -1) {
             let shifted = alphabet[(chL + 13) % 26];
             result += shifted;
             changedCh.push(shifted);
         } else {
-            let chU = alphabetUp.indexOf(ch);
+            let chU = findIndex(alphabetUp, ch);
             if (chU !== -1) {
                 let shifted = alphabetUp[(chU + 13) % 26];
                 result += shifted;
